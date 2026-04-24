@@ -17,24 +17,33 @@
       </div>
       <div id="header-blue">
         <nav id="topbar-navigation">
-          <a class="navigation-item" href="./register">
-            <div class="title">SIGN UP</div>
-          </a>
         </nav>
       </div>
     </header>
     <main>
       <section>
-        <div class="title">Log In</div>
-        <div class="form">
-          <div class="form-name">Student/Organizer ID</div>
-          <input placeholder="User ID" type="text"/>
+        <div id="logIn-types">
+          <div class="logIn-type selected" data-type="student">
+            <img src="assets/graduate-hat.png">
+            <div class="logIn-type-name">Student</div>
+          </div>
+          <div class="logIn-type" data-type="faculty">
+            <img src="assets/staff.png">
+            <div class="logIn-type-name">Faculty</div>
+          </div>
         </div>
-        <div class="form">
-          <div class="form-name">Account Password</div>
-          <input placeholder="Password" type="password"/>
+        <div id="logIn-info">
+          <div class="title">Log In</div>
+          <div class="form">
+            <div class="form-name">Account ID</div>
+            <input id="logIn-info-accountId" placeholder="Account ID" type="text"/>
+          </div>
+          <div class="form">
+            <div class="form-name">Account Password</div>
+            <input id="logIn-info-password" placeholder="Password" type="password"/>
+          </div>
+          <button id="button-logIn">Log In</button>
         </div>
-        <button id="button-logIn">Log In</button>
       </section>
     </main>
     <footer>
@@ -44,4 +53,5 @@
       </div>
     </footer>
   </body>
+  <script src="index.js"></script>
 </html>
