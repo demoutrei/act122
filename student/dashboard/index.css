@@ -100,7 +100,53 @@
     aspect-ratio: 4 / 2;
     background-color: white;
     border-radius: 12px;
-    height: calc(100% - 16px);
-    padding: 8px;
+    box-sizing: border-box;
+    height: calc(100% - 30px);
+    padding: 15px;
+
+    > #calendar-info-date {
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+
+    > #calendar-events {
+      display: flex;
+      flex-direction: column;
+      height: calc(100% - 28px);
+      margin-top: 8px;
+      overflow-x: clip;
+      overflow-y: auto;
+
+      > .calendar-event {
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        padding: 7px 10px;
+        
+        &:hover {
+          background-color: lightgray;
+          cursor: pointer;
+        }
+
+        > header {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          
+          > .calendar-event-name {
+            font-weight: 500;
+          }
+        }
+
+        > main {
+          margin-top: 3px;
+          padding-left: 13px;
+          
+          > .calendar-event-description {
+            font-size: 0.9em;
+          }
+        }
+      }
+    }
   }
 }
