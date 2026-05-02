@@ -10,7 +10,7 @@
     <title>Sample System</title>
   </head>
   <body>
-    <header id="topbar">
+    <header id="headerContent">
       <div id="header-yellow">
         <img id="header-icon" src="../../assets/uspf.png"/>
         <div id="header-title">UNIVERSITY OF SOUTHERN PHILIPPINES FOUNDATION</div>
@@ -20,8 +20,87 @@
         </nav>
       </div>
     </header>
-    <main></main>
-    <footer>
+    <main id="mainContent">
+      <section id="section-calendar">
+        <header>
+          <button id="button-previousMonth">&lang;</button>
+          <div id="container-monthName">MAY</div>
+          <button id="button-nextMonth">&rang;</button>
+        </header>
+        <main>
+          <table class="calendar">
+            <tr>
+              <th>Sun</th>
+              <th>Mon</th>
+              <th>Tue</th>
+              <th>Wed</th>
+              <th>Thu</th>
+              <th>Fri</th>
+              <th>Sat</th>
+            </tr>
+            <tr>
+              <td class="calendar-anotherMonthDate">26</td>
+              <td class="calendar-anotherMonthDate">27</td>
+              <td class="calendar-anotherMonthDate">28</td>
+              <td class="calendar-anotherMonthDate calendar-hasEvents">29</td>
+              <td class="calendar-anotherMonthDate">30</td>
+              <td>1</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td class="calendar-holiday">3</td>
+              <td>4</td>
+              <td>5</td>
+              <td class="calendar-today calendar-hasEvents">6</td>
+              <td>7</td>
+              <td>8</td>
+              <td>9</td>
+            </tr>
+            <tr>
+              <td class="calendar-holiday">10</td>
+              <td class="calendar-hasEvents">11</td>
+              <td>12</td>
+              <td>13</td>
+              <td>14</td>
+              <td>15</td>
+              <td>16</td>
+            </tr>
+            <tr>
+              <td class="calendar-holiday">17</td>
+              <td>18</td>
+              <td>19</td>
+              <td>20</td>
+              <td>21</td>
+              <td>22</td>
+              <td>23</td>
+            </tr>
+            <tr>
+              <td class="calendar-holiday">24</td>
+              <td>25</td>
+              <td>26</td>
+              <td>27</td>
+              <td>28</td>
+              <td class="calendar-hasEvents">29</td>
+              <td>30</td>
+            </tr>
+            <tr>
+              <td class="calendar-holiday">31</td>
+              <td class="calendar-anotherMonthDate">1</td>
+              <td class="calendar-anotherMonthDate">2</td>
+              <td class="calendar-anotherMonthDate">3</td>
+              <td class="calendar-anotherMonthDate">4</td>
+              <td class="calendar-anotherMonthDate">5</td>
+              <td class="calendar-anotherMonthDate">6</td>
+            </tr>
+          </table>
+        </main>
+        <footer>
+          *May not be to scale
+        </footer>
+      </section>
+      <section id="calendar-info"></section>
+    </main>
+    <footer id="footerContent">
       <div id="footer-top">
         <img src="../../assets/uspf.png"/>
         <div id="name">UNIVERSITY OF SOUTHERN PHILIPPINES FOUNDATION</div>

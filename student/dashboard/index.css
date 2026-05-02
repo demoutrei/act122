@@ -1,1 +1,106 @@
 @import url('../../base.css');
+
+
+#mainContent {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 50px;
+
+  > #section-calendar {
+    aspect-ratio: 5 / 3;
+    background-color: white;
+    border-radius: 12px;
+    height: max-content;
+    padding: 20px;
+
+    > header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+
+      > button {
+        aspect-ratio: 1 / 1;
+        background: #E3E3E3;
+        border: 1px solid #D3D3D3;
+        border-radius: 4px;
+        outline: none;
+        
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      > #container-monthName {
+        font-size: 1.2em;
+        font-weight: bold;
+      }
+    }
+
+    > main {
+      > .calendar {
+        border-spacing: 10px;
+
+        th, td {
+          border-radius: 13px;
+          padding: 2px 7px;
+          text-align: end;
+          width: 35px;
+        }
+
+        td {
+          &:hover {
+            background-color: #7AA2C4;
+            cursor: pointer;
+          }
+
+          &.calendar-anotherMonthDate {
+            color: #5D5555;
+          }
+
+          &.calendar-holiday {
+            color: red;
+          }
+          
+          &.calendar-today {
+            background-color: var(--signature-blue);
+            color: white;
+
+            &.calendar-hasEvents {
+              &:before {
+                color: var(--signature-yellow);
+              }
+            }
+          }
+
+          &.calendar-hasEvents {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            position: relative;
+            
+            &:before {
+              color: var(--signature-blue);
+              border-radius: 5px;
+              content: "·";
+            }
+          }
+        }
+      }
+    }
+
+    > footer {
+      color: gray;
+      font-size: 0.7em;
+    }
+  }
+
+  > #calendar-info {
+    aspect-ratio: 4 / 2;
+    background-color: white;
+    border-radius: 12px;
+    height: calc(100% - 16px);
+    padding: 8px;
+  }
+}

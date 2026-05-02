@@ -14,7 +14,7 @@ body {
 }
 
 
-#topbar {
+#headerContent {
   display: flex;
   flex-direction: row;
   position: sticky;
@@ -139,15 +139,16 @@ body {
 }
 
 
-main {
+#mainContent {
   height: calc(100vh - 165px);
+  box-sizing: border-box;
   position: absolute;
   top: 2.8rem;
   width: 100vw;
 }
 
 
-footer {
+#footerContent {
   background-color: #000050;
   bottom: 0;
   box-sizing: border-box;
