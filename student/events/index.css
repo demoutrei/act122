@@ -1,0 +1,92 @@
+@import url('../../base.css');
+
+
+#mainContent {
+  display: flex;
+  padding-top: 30px;
+  
+  > #eventsList {
+    overflow-x: clip;
+    width: 450px;
+    
+    > .container-month {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      > .container-month-date {
+        display: flex;
+        flex-direction: row;
+        
+        > header {
+          display: flex;
+          flex-direction: column;
+          width: 150px;
+  
+          > .container-month-name {
+            align-self: end;
+            font-weight: 500;
+            padding: 5px 0;
+            padding-right: 15px;
+          }
+        }
+  
+        > main {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          position: relative;
+          width: calc(100% - 126px);
+  
+          > .container-event {
+            background: linear-gradient(to left, var(--primary) 50%, darkgray 50%) right;
+            background-size: 200%;
+            border-left: 3px solid gray;
+            display: flex;
+            flex-direction: column;
+            padding: 5px 10px;
+            transition: 0.35s ease-out;
+            width: 100%;
+            
+            &:hover {
+              background-position: left;
+              cursor: pointer;
+            }
+
+            &.ended {
+              background: linear-gradient(to left, var(--primary) 50%, red 50%) right;
+              background-size: 200%;
+              border-left-color: red;
+              transition: 0.35s ease-out;
+
+              &:hover {
+                background-position: left;
+                color: white;
+              }
+            }
+
+            &.ongoing {
+              background: linear-gradient(to left, var(--primary) 50%, #0C8900 50%) right;
+              background-size: 200%;
+              border-left-color: #0C8900;
+              transition: 0.35s ease-out;
+
+              &:hover {
+                background-position: left;
+                color: white;
+              }
+            }
+
+            > .container-month-event-name {
+              font-weight: 500;
+            }
+            
+            > .container-month-event-description {
+              font-size: 0.8em;
+            }
+          }
+        }
+      }
+    }
+  }
+}
