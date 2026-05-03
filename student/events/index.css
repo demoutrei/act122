@@ -3,10 +3,12 @@
 
 #mainContent {
   display: flex;
-  padding-top: 30px;
   
   > #eventsList {
     overflow-x: clip;
+    overflow-y: auto;
+    padding-top: 30px;
+    padding-bottom: 15px;
     width: 450px;
     
     > .container-month {
@@ -46,7 +48,7 @@
             flex-direction: column;
             padding: 5px 10px;
             transition: 0.35s ease-out;
-            width: 100%;
+            width: calc(100% - 23px);
             
             &:hover {
               background-position: left;
@@ -88,5 +90,14 @@
         }
       }
     }
+  }
+
+  > #eventInfo {
+    align-self: center;
+    background-color: #F8F8F0;
+    box-sizing: border-box;
+    height: 100%;
+    padding: 10px;
+    width: calc(100% - 450px);
   }
 }
