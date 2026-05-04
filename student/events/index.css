@@ -7,9 +7,36 @@
   > #eventsList {
     overflow-x: clip;
     overflow-y: auto;
-    padding-top: 30px;
     padding-bottom: 15px;
     width: 450px;
+
+    > #eventsList-legends {
+      background-color: var(--primary);
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      margin-bottom: 5px;
+      padding: 5px 10px;
+      padding-top: 17px;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+
+      > .eventsList-legend {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        font-size: 0.9em;
+        gap: 7px;
+
+        > .eventsList-legend-color {
+          aspect-ratio: 1 / 1;
+          height: max-content;
+          width: 10px;
+        }
+      }
+    }
     
     > .container-month {
       display: flex;
@@ -55,7 +82,7 @@
               cursor: pointer;
             }
 
-            &.ended {
+            &.cancelled {
               background: linear-gradient(to left, var(--primary) 50%, red 50%) right;
               background-size: 200%;
               border-left-color: red;
@@ -67,10 +94,22 @@
               }
             }
 
-            &.ongoing {
+            &.ended {
               background: linear-gradient(to left, var(--primary) 50%, #0C8900 50%) right;
               background-size: 200%;
               border-left-color: #0C8900;
+              transition: 0.35s ease-out;
+
+              &:hover {
+                background-position: left;
+                color: white;
+              }
+            }
+
+            &.ongoing {
+              background: linear-gradient(to left, var(--primary) 50%, #FF7600 50%) right;
+              background-size: 200%;
+              border-left-color: #FF7600;
               transition: 0.35s ease-out;
 
               &:hover {
