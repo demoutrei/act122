@@ -136,7 +136,90 @@
     background-color: #F8F8F0;
     box-sizing: border-box;
     height: 100%;
-    padding: 10px;
+    padding: 15px 20px;
     width: calc(100% - 450px);
+    
+    > #eventInfo-description {
+      font-size: 0.9em;
+    }
+    
+    > #eventInfo-name {
+      align-items: center;
+      display: flex;
+      font-size: 1.2em;
+      font-weight: 500;
+
+      &.ongoing:after {
+        background-color: #FF7600;
+        border-radius: 13px;
+        box-sizing: border-box;
+        color: white;
+        content: "ONGOING";
+        font-size: 0.6em;
+        font-weight: normal;
+        margin-left: 10px;
+        padding: 3px 7px;
+      }
+    }
+
+    > #eventInfo-time {
+      align-items: center;
+      display: flex;
+      margin-top: 18px;
+      width: max-content;
+
+      &::before {
+        aspect-ratio: 1 / 1;
+        background-image: url('../../assets/time.png');
+        background-size: cover;
+        box-sizing: border-box;
+        content: "";
+        margin-right: 8px;
+        width: 18px;
+      }
+    }
+
+    > #eventInfo-venue {
+      align-items: center;
+      display: flex;
+      margin-top: 8px;
+      width: max-content;
+
+      &::before {
+        aspect-ratio: 1 / 1;
+        background-image: url('../../assets/location.png');
+        background-size: cover;
+        box-sizing: border-box;
+        content: "";
+        margin-right: 8px;
+        width: 18px;
+      }
+    }
+
+    > #button-register {
+      background-color: var(--signature-blue);
+      border: none;
+      border-radius: 13px;
+      color: white;
+      font-size: 0.9em;
+      font-weight: 500;
+      padding: 4px 14px;
+      position: absolute;
+      right: 30px;
+      top: 20px;
+
+      &:hover {
+        cursor: pointer;
+      }
+      
+      &:disabled {
+        background-color: #6F9CDE;
+        font-weight: bold;
+
+        &:hover {
+          cursor: not-allowed;
+        }
+      }
+    }
   }
 }
