@@ -1,0 +1,225 @@
+@import url('../../../base.css');
+
+
+#mainContent {
+  display: flex;
+  
+  > #eventsList {
+    overflow-x: clip;
+    overflow-y: auto;
+    padding-bottom: 15px;
+    width: 450px;
+
+    > #eventsList-legends {
+      background-color: var(--primary);
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      margin-bottom: 5px;
+      padding: 5px 10px;
+      padding-top: 17px;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+
+      > .eventsList-legend {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        font-size: 0.9em;
+        gap: 7px;
+
+        > .eventsList-legend-color {
+          aspect-ratio: 1 / 1;
+          height: max-content;
+          width: 10px;
+        }
+      }
+    }
+    
+    > .container-month {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      > .container-month-date {
+        display: flex;
+        flex-direction: row;
+        
+        > header {
+          display: flex;
+          flex-direction: column;
+          width: 150px;
+  
+          > .container-month-name {
+            align-self: end;
+            font-weight: 500;
+            padding: 5px 0;
+            padding-right: 15px;
+          }
+        }
+  
+        > main {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          position: relative;
+          width: calc(100% - 126px);
+  
+          > .container-event {
+            background: linear-gradient(to left, var(--primary) 50%, darkgray 50%) right;
+            background-size: 200%;
+            border-left: 3px solid gray;
+            display: flex;
+            flex-direction: column;
+            padding: 5px 10px;
+            transition: 0.35s ease-out;
+            width: calc(100% - 23px);
+            
+            &:hover {
+              background-position: left;
+              cursor: pointer;
+            }
+
+            &.cancelled {
+              background: linear-gradient(to left, var(--primary) 50%, red 50%) right;
+              background-size: 200%;
+              border-left-color: red;
+              transition: 0.35s ease-out;
+
+              &:hover {
+                background-position: left;
+                color: white;
+              }
+            }
+
+            &.ended {
+              background: linear-gradient(to left, var(--primary) 50%, #0C8900 50%) right;
+              background-size: 200%;
+              border-left-color: #0C8900;
+              transition: 0.35s ease-out;
+
+              &:hover {
+                background-position: left;
+                color: white;
+              }
+            }
+
+            &.ongoing {
+              background: linear-gradient(to left, var(--primary) 50%, #FF7600 50%) right;
+              background-size: 200%;
+              border-left-color: #FF7600;
+              transition: 0.35s ease-out;
+
+              &:hover {
+                background-position: left;
+                color: white;
+              }
+            }
+
+            > .container-month-event-name {
+              font-weight: 500;
+            }
+            
+            > .container-month-event-description {
+              font-size: 0.8em;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  > #eventInfo {
+    align-self: center;
+    background-color: #F8F8F0;
+    box-sizing: border-box;
+    height: 100%;
+    padding: 15px 20px;
+    width: calc(100% - 450px);
+    
+    > #eventInfo-description {
+      font-size: 0.9em;
+    }
+    
+    > #eventInfo-name {
+      align-items: center;
+      display: flex;
+      font-size: 1.2em;
+      font-weight: 500;
+
+      &.ongoing:after {
+        background-color: #FF7600;
+        border-radius: 13px;
+        box-sizing: border-box;
+        color: white;
+        content: "ONGOING";
+        font-size: 0.6em;
+        font-weight: normal;
+        margin-left: 10px;
+        padding: 3px 7px;
+      }
+    }
+
+    > #eventInfo-time {
+      align-items: center;
+      display: flex;
+      margin-top: 18px;
+      width: max-content;
+
+      &::before {
+        aspect-ratio: 1 / 1;
+        background-image: url('../../../assets/time.png');
+        background-size: cover;
+        box-sizing: border-box;
+        content: "";
+        margin-right: 8px;
+        width: 18px;
+      }
+    }
+
+    > #eventInfo-venue {
+      align-items: center;
+      display: flex;
+      margin-top: 8px;
+      width: max-content;
+
+      &::before {
+        aspect-ratio: 1 / 1;
+        background-image: url('../../../assets/location.png');
+        background-size: cover;
+        box-sizing: border-box;
+        content: "";
+        margin-right: 8px;
+        width: 18px;
+      }
+    }
+
+    > #button-register {
+      background-color: var(--signature-blue);
+      border: none;
+      border-radius: 13px;
+      color: white;
+      font-size: 0.9em;
+      font-weight: 500;
+      padding: 4px 14px;
+      position: absolute;
+      right: 30px;
+      top: 20px;
+
+      &:hover {
+        cursor: pointer;
+      }
+      
+      &:disabled {
+        background-color: #6F9CDE;
+        font-weight: bold;
+
+        &:hover {
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300..900&display=swap" rel="stylesheet">
+    <link rel="icon" href="../../../assets/uspf.png"/>
+    <link rel="stylesheet" href="index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample System</title>
+  </head>
+  <body>
+    <header id="headerContent">
+      <div id="header-yellow">
+        <img id="header-icon" src="../../../assets/uspf.png"/>
+        <div id="header-title">UNIVERSITY OF SOUTHERN PHILIPPINES FOUNDATION</div>
+      </div>
+      <div id="header-blue">
+        <nav id="topbar-navigation">
+          <a href="../../profile" class="navigation-item">
+            <div class="title">Profile</div>
+          </a>
+          <a href="../" class="navigation-item" style="color: white;">
+            <div class="title">Events</div>
+          </a>
+        </nav>
+      </div>
+    </header>
+    <main id="mainContent">
+      <section id="eventsList">
+        <div id="eventsList-legends">
+          <div class="eventsList-legend">
+            <div class="eventsList-legend-color" style="background-color: #0C8900;"></div>
+            <div class="eventsList-legend-name">Completed</div>
+          </div>
+          <div class="eventsList-legend">
+            <div class="eventsList-legend-color" style="background-color: #FF7600;"></div>
+            <div class="eventsList-legend-name">Ongoing</div>
+          </div>
+          <div class="eventsList-legend">
+            <div class="eventsList-legend-color" style="background-color: gray;"></div>
+            <div class="eventsList-legend-name">Upcoming</div>
+          </div>
+          <div class="eventsList-legend">
+            <div class="eventsList-legend-color" style="background-color: red;"></div>
+            <div class="eventsList-legend-name">Cancelled</div>
+          </div>
+        </div>
+        <div class="container-month">
+          <div class="container-month-date">
+            <header>
+              <div class="container-month-name">April 30 2026</div>
+            </header>
+            <main>
+              <div class="container-event ended">
+                <div class="container-month-event-name">PSiTE7 Cebu ICT Congress 2026</div>
+              </div>
+              <div class="container-event ended">
+                <div class="container-month-event-name">PSiTE7 Innovation Challenge</div>
+              </div>
+            </main>
+          </div>
+          <div class="container-month-date">
+            <header>
+              <div class="container-month-name">May 6 2026</div>
+            </header>
+            <main>
+              <div class="container-event ongoing">
+                <div class="container-month-event-name">Sample Event</div>
+                <div class="container-month-event-description">Sample event description</div>
+              </div>
+            </main>
+          </div>
+          <div class="container-month-date">
+            <header>
+              <div class="container-month-name">May 11 2026</div>
+            </header>
+            <main>
+              <div class="container-event cancelled">
+                <div class="container-month-event-name">Lunes</div>
+                <div class="container-month-event-description">Lunes na naman!</div>
+              </div>
+            </main>
+          </div>
+          <div class="container-month-date">
+            <header>
+              <div class="container-month-name">May 15 2026</div>
+            </header>
+            <main>
+              <div class="container-event">
+                <div class="container-month-event-name">Rizal Tour</div>
+                <div class="container-month-event-description">Batch 1</div>
+              </div>
+            </main>
+          </div>
+          <div class="container-month-date">
+            <header>
+              <div class="container-month-name">May 22 2026</div>
+            </header>
+            <main>
+              <div class="container-event">
+                <div class="container-month-event-name">Rizal Tour</div>
+                <div class="container-month-event-description">Batch 2</div>
+              </div>
+            </main>
+          </div>
+          <div class="container-month-date">
+            <header>
+              <div class="container-month-name">May 27 2026</div>
+            </header>
+            <main>
+              <div class="container-event">
+                <div class="container-month-event-name">Eid al-Adha</div>
+              </div>
+            </main>
+          </div>
+        </div>
+      </section>
+      <section id="eventInfo">
+        <div id="eventInfo-name" class="ongoing">Sample Event</div>
+        <div id="eventInfo-description">Sample event description</div>
+        <div id="eventInfo-time" title="Schedule">5:00 p.m - 8:00 p.m</div>
+        <div id="eventInfo-venue" title="Venue">CCS Laboratory 3</div>
+        <button id="button-register" disabled>Registered</button>
+      </section>
+    </main>
+    <footer id="footerContent">
+      <div id="footer-top">
+        <img src="../../../assets/uspf.png"/>
+        <div id="name">UNIVERSITY OF SOUTHERN PHILIPPINES FOUNDATION</div>
+      </div>
+    </footer>
+  </body>
+  <script src="index.js"></script>
+</html>

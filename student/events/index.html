@@ -20,108 +20,110 @@
           <a href="../profile" class="navigation-item">
             <div class="title">Profile</div>
           </a>
-          <a class="navigation-item">
+          <a href="../events" class="navigation-item" style="color: white;">
             <div class="title">Events</div>
           </a>
         </nav>
       </div>
     </header>
     <main id="mainContent">
-      <section id="eventsList">
-        <div id="eventsList-legends">
-          <div class="eventsList-legend">
-            <div class="eventsList-legend-color" style="background-color: #0C8900;"></div>
-            <div class="eventsList-legend-name">Completed</div>
-          </div>
-          <div class="eventsList-legend">
-            <div class="eventsList-legend-color" style="background-color: #FF7600;"></div>
-            <div class="eventsList-legend-name">Ongoing</div>
-          </div>
-          <div class="eventsList-legend">
-            <div class="eventsList-legend-color" style="background-color: gray;"></div>
-            <div class="eventsList-legend-name">Upcoming</div>
-          </div>
-          <div class="eventsList-legend">
-            <div class="eventsList-legend-color" style="background-color: red;"></div>
-            <div class="eventsList-legend-name">Cancelled</div>
-          </div>
-        </div>
-        <div class="container-month">
-          <div class="container-month-date">
-            <header>
-              <div class="container-month-name">April 30 2026</div>
-            </header>
-            <main>
-              <div class="container-event ended">
-                <div class="container-month-event-name">PSiTE7 Cebu ICT Congress 2026</div>
-              </div>
-              <div class="container-event ended">
-                <div class="container-month-event-name">PSiTE7 Innovation Challenge</div>
-              </div>
-            </main>
-          </div>
-          <div class="container-month-date">
-            <header>
-              <div class="container-month-name">May 6 2026</div>
-            </header>
-            <main>
-              <div class="container-event ongoing">
-                <div class="container-month-event-name">Sample Event</div>
-                <div class="container-month-event-description">Sample event description</div>
-              </div>
-            </main>
-          </div>
-          <div class="container-month-date">
-            <header>
-              <div class="container-month-name">May 11 2026</div>
-            </header>
-            <main>
-              <div class="container-event cancelled">
-                <div class="container-month-event-name">Lunes</div>
-                <div class="container-month-event-description">Lunes na naman!</div>
-              </div>
-            </main>
-          </div>
-          <div class="container-month-date">
-            <header>
-              <div class="container-month-name">May 15 2026</div>
-            </header>
-            <main>
-              <div class="container-event">
-                <div class="container-month-event-name">Rizal Tour</div>
-                <div class="container-month-event-description">Batch 1</div>
-              </div>
-            </main>
-          </div>
-          <div class="container-month-date">
-            <header>
-              <div class="container-month-name">May 22 2026</div>
-            </header>
-            <main>
-              <div class="container-event">
-                <div class="container-month-event-name">Rizal Tour</div>
-                <div class="container-month-event-description">Batch 2</div>
-              </div>
-            </main>
-          </div>
-          <div class="container-month-date">
-            <header>
-              <div class="container-month-name">May 27 2026</div>
-            </header>
-            <main>
-              <div class="container-event">
-                <div class="container-month-event-name">Eid al-Adha</div>
-              </div>
-            </main>
-          </div>
-        </div>
+      <section id="section-calendar">
+        <header>
+          <button id="button-previousMonth">&lang;</button>
+          <div id="container-monthName">MAY 2026</div>
+          <button id="button-nextMonth">&rang;</button>
+        </header>
+        <main>
+          <table class="calendar">
+            <tr>
+              <th>Sun</th>
+              <th>Mon</th>
+              <th>Tue</th>
+              <th>Wed</th>
+              <th>Thu</th>
+              <th>Fri</th>
+              <th>Sat</th>
+            </tr>
+            <tr>
+              <td class="calendar-anotherMonthDate">26</td>
+              <td class="calendar-anotherMonthDate">27</td>
+              <td class="calendar-anotherMonthDate">28</td>
+              <td class="calendar-anotherMonthDate calendar-hasEvents">29</td>
+              <td class="calendar-anotherMonthDate">30</td>
+              <td>1</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td class="calendar-holiday">3</td>
+              <td>4</td>
+              <td>5</td>
+              <td class="calendar-today calendar-hasEvents">6</td>
+              <td>7</td>
+              <td>8</td>
+              <td>9</td>
+            </tr>
+            <tr>
+              <td class="calendar-holiday">10</td>
+              <td class="calendar-hasEvents">11</td>
+              <td>12</td>
+              <td>13</td>
+              <td>14</td>
+              <td class="calendar-hasEvents">15</td>
+              <td>16</td>
+            </tr>
+            <tr>
+              <td class="calendar-holiday">17</td>
+              <td>18</td>
+              <td>19</td>
+              <td>20</td>
+              <td>21</td>
+              <td class="calendar-hasEvents">22</td>
+              <td>23</td>
+            </tr>
+            <tr>
+              <td class="calendar-holiday">24</td>
+              <td>25</td>
+              <td>26</td>
+              <td class="calendar-holiday calendar-hasEvents">27</td>
+              <td>28</td>
+              <td>29</td>
+              <td>30</td>
+            </tr>
+            <tr>
+              <td class="calendar-holiday">31</td>
+              <td class="calendar-anotherMonthDate">1</td>
+              <td class="calendar-anotherMonthDate">2</td>
+              <td class="calendar-anotherMonthDate">3</td>
+              <td class="calendar-anotherMonthDate">4</td>
+              <td class="calendar-anotherMonthDate">5</td>
+              <td class="calendar-anotherMonthDate">6</td>
+            </tr>
+          </table>
+        </main>
+        <footer>
+          *May not be to scale
+        </footer>
       </section>
-      <section id="eventInfo">
-        <div id="eventInfo-name" class="ongoing">Sample Event</div>
-        <div id="eventInfo-description">Sample event description</div>
-        <div id="eventInfo-time" title="Schedule">5:00 p.m - 8:00 p.m</div>
-        <div id="eventInfo-venue" title="Venue">CCS Laboratory 3</div>
-        <button id="button-register" disabled>Registered</button>
+      <section id="calendar-info">
+        <header>
+          <div id="calendar-info-date">May 6, 2026</div>
+          <a href="../events/sample">View All</a>
+        </header>
+        <main>
+          <div id="calendar-events">
+            <div id="event-sampleEvent" class="calendar-event">
+              <header>
+                <div class="calendar-event-name">Sample Event</div>
+                <div class="calendar-event-time">5:00 PM - 8:00 PM</div>
+              </header>
+              <main>
+                <div class="calendar-event-description">
+                  Sample event description
+                </div>
+              </main>
+            </div>
+          </div>
+        </main>
       </section>
     </main>
     <footer id="footerContent">

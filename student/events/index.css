@@ -3,221 +3,176 @@
 
 #mainContent {
   display: flex;
-  
-  > #eventsList {
-    overflow-x: clip;
-    overflow-y: auto;
-    padding-bottom: 15px;
-    width: 450px;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 50px;
 
-    > #eventsList-legends {
-      background-color: var(--primary);
-      box-sizing: border-box;
+  > #section-calendar {
+    aspect-ratio: 5 / 3;
+    background-color: white;
+    border-radius: 12px;
+    height: max-content;
+    padding: 20px;
+
+    > header {
       display: flex;
       flex-direction: row;
       justify-content: space-evenly;
-      margin-bottom: 5px;
-      padding: 5px 10px;
-      padding-top: 17px;
-      position: sticky;
-      top: 0;
-      z-index: 1;
 
-      > .eventsList-legend {
-        align-items: center;
-        display: flex;
-        flex-direction: row;
-        font-size: 0.9em;
-        gap: 7px;
+      > button {
+        aspect-ratio: 1 / 1;
+        background: #E3E3E3;
+        border: 1px solid #D3D3D3;
+        border-radius: 4px;
+        outline: none;
+        
+        &:hover {
+          cursor: pointer;
+        }
+      }
 
-        > .eventsList-legend-color {
-          aspect-ratio: 1 / 1;
-          height: max-content;
-          width: 10px;
+      > #container-monthName {
+        font-size: 1.2em;
+        font-weight: bold;
+      }
+    }
+
+    > main {
+      > .calendar {
+        border-spacing: 10px;
+
+        th, td {
+          border-radius: 13px;
+          padding: 2px 7px;
+          text-align: end;
+          width: 35px;
+        }
+
+        th {
+          font-weight: 500;
+        }
+
+        td {
+          &:hover {
+            background-color: #7AA2C4;
+            cursor: pointer;
+          }
+
+          &.calendar-anotherMonthDate {
+            color: #5D5555;
+          }
+
+          &.calendar-holiday {
+            color: red;
+          }
+          
+          &.calendar-today {
+            background-color: var(--signature-blue);
+            color: white;
+
+            &.calendar-hasEvents {
+              &:before {
+                color: var(--signature-yellow);
+              }
+            }
+          }
+
+          &.calendar-hasEvents {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            position: relative;
+            
+            &:before {
+              color: var(--signature-blue);
+              border-radius: 5px;
+              content: "·";
+            }
+          }
         }
       }
     }
-    
-    > .container-month {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
 
-      > .container-month-date {
-        display: flex;
-        flex-direction: row;
-        
-        > header {
-          display: flex;
-          flex-direction: column;
-          width: 150px;
-  
-          > .container-month-name {
-            align-self: end;
-            font-weight: 500;
-            padding: 5px 0;
-            padding-right: 15px;
-          }
-        }
-  
-        > main {
-          display: flex;
-          flex-direction: column;
-          gap: 10px;
-          position: relative;
-          width: calc(100% - 126px);
-  
-          > .container-event {
-            background: linear-gradient(to left, var(--primary) 50%, darkgray 50%) right;
-            background-size: 200%;
-            border-left: 3px solid gray;
-            display: flex;
-            flex-direction: column;
-            padding: 5px 10px;
-            transition: 0.35s ease-out;
-            width: calc(100% - 23px);
-            
-            &:hover {
-              background-position: left;
-              cursor: pointer;
-            }
-
-            &.cancelled {
-              background: linear-gradient(to left, var(--primary) 50%, red 50%) right;
-              background-size: 200%;
-              border-left-color: red;
-              transition: 0.35s ease-out;
-
-              &:hover {
-                background-position: left;
-                color: white;
-              }
-            }
-
-            &.ended {
-              background: linear-gradient(to left, var(--primary) 50%, #0C8900 50%) right;
-              background-size: 200%;
-              border-left-color: #0C8900;
-              transition: 0.35s ease-out;
-
-              &:hover {
-                background-position: left;
-                color: white;
-              }
-            }
-
-            &.ongoing {
-              background: linear-gradient(to left, var(--primary) 50%, #FF7600 50%) right;
-              background-size: 200%;
-              border-left-color: #FF7600;
-              transition: 0.35s ease-out;
-
-              &:hover {
-                background-position: left;
-                color: white;
-              }
-            }
-
-            > .container-month-event-name {
-              font-weight: 500;
-            }
-            
-            > .container-month-event-description {
-              font-size: 0.8em;
-            }
-          }
-        }
-      }
+    > footer {
+      color: gray;
+      font-size: 0.7em;
     }
   }
 
-  > #eventInfo {
-    align-self: center;
-    background-color: #F8F8F0;
+  > #calendar-info {
+    aspect-ratio: 4 / 2;
+    background-color: white;
+    border-radius: 12px;
     box-sizing: border-box;
-    height: 100%;
-    padding: 15px 20px;
-    width: calc(100% - 450px);
-    
-    > #eventInfo-description {
-      font-size: 0.9em;
-    }
-    
-    > #eventInfo-name {
+    height: calc(100% - 30px);
+    padding: 15px 18px;
+
+    > header {
       align-items: center;
       display: flex;
-      font-size: 1.2em;
-      font-weight: 500;
-
-      &.ongoing:after {
-        background-color: #FF7600;
-        border-radius: 13px;
-        box-sizing: border-box;
-        color: white;
-        content: "ONGOING";
-        font-size: 0.6em;
-        font-weight: normal;
-        margin-left: 10px;
-        padding: 3px 7px;
-      }
-    }
-
-    > #eventInfo-time {
-      align-items: center;
-      display: flex;
-      margin-top: 18px;
-      width: max-content;
-
-      &::before {
-        aspect-ratio: 1 / 1;
-        background-image: url('../../assets/time.png');
-        background-size: cover;
-        box-sizing: border-box;
-        content: "";
-        margin-right: 8px;
-        width: 18px;
-      }
-    }
-
-    > #eventInfo-venue {
-      align-items: center;
-      display: flex;
-      margin-top: 8px;
-      width: max-content;
-
-      &::before {
-        aspect-ratio: 1 / 1;
-        background-image: url('../../assets/location.png');
-        background-size: cover;
-        box-sizing: border-box;
-        content: "";
-        margin-right: 8px;
-        width: 18px;
-      }
-    }
-
-    > #button-register {
-      background-color: var(--signature-blue);
-      border: none;
-      border-radius: 13px;
-      color: white;
-      font-size: 0.9em;
-      font-weight: 500;
-      padding: 4px 14px;
-      position: absolute;
-      right: 30px;
-      top: 20px;
-
-      &:hover {
-        cursor: pointer;
-      }
+      flex-direction: row;
+      justify-content: space-between;
       
-      &:disabled {
-        background-color: #6F9CDE;
-        font-weight: bold;
+      > a {
+        border-radius: 10px;
+        color: var(--signature-blue);
+        padding: 5px 7px;
+        text-decoration: none;
 
         &:hover {
-          cursor: not-allowed;
+          background-color: lightgray;
+        }
+
+        &:visited {
+          color: var(--signature-blue);
+        }
+      }
+      
+      > #calendar-info-date {
+        font-size: 1.2em;
+        font-weight: bold;
+      }
+    }
+
+    > main {
+      > #calendar-events {
+        display: flex;
+        flex-direction: column;
+        height: calc(100% - 28px);
+        margin-top: 8px;
+        overflow-x: clip;
+        overflow-y: auto;
+  
+        > .calendar-event {
+          border-radius: 8px;
+          display: flex;
+          flex-direction: column;
+          padding: 7px 10px;
+          
+          &:hover {
+            background-color: lightgray;
+            cursor: pointer;
+          }
+  
+          > header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            
+            > .calendar-event-name {
+              font-weight: 500;
+            }
+          }
+  
+          > main {
+            margin-top: 3px;
+            padding-left: 13px;
+            
+            > .calendar-event-description {
+              font-size: 0.9em;
+            }
+          }
         }
       }
     }

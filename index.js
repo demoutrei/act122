@@ -47,6 +47,6 @@ logInButton.addEventListener(
   "click",
   (_) => {
     const a = document.querySelector(".logIn-type.selected");
-    window.open(`./${a.dataset.type}/dashboard`, "_self");
+    window.open(`./${a.dataset.type}/events`, "_self");
   }
 )
