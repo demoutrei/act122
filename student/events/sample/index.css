@@ -221,5 +221,88 @@
         }
       }
     }
+
+    > #section-registration {
+      display: flex;
+      flex-direction: column;
+      margin-top: 16px;
+
+      &::before {
+        align-self: center;
+        color: var(--signature-blue);
+        content: "REGISTRATION";
+        display: block;
+        font-weight: 500;
+      }
+
+      > #section-registration-name {
+        &::before {
+          content: "Participant Name";
+          display: block;
+          font-size: 0.78em;
+          font-style: italic;
+          font-weight: 500;
+        }
+
+        > #section-registration-name-input {
+          background: none;
+          border: 1px solid black;
+          border-radius: 3px;
+          font-family: "Rubik";
+          margin-top: 3px;
+          padding: 5px 10px;
+          width: 278px;
+        }
+      }
+
+      > #section-registration-academicStanding {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 15px;
+
+        > div {
+          &#container-academicStanding-college::before {
+            content: "College";
+            display: block;
+            font-size: 0.78em;
+            font-style: italic;
+            font-weight: 500;
+            margin-bottom: 3px;
+          }
+
+          &#container-academicStanding-program::before {
+            content: "Program";
+            display: block;
+            font-size: 0.78em;
+            font-style: italic;
+            font-weight: 500;
+            margin-bottom: 3px;
+          }
+
+          &#container-academicStanding-year::before {
+            content: "Year";
+            display: block;
+            font-size: 0.78em;
+            font-style: italic;
+            font-weight: 500;
+            margin-bottom: 3px;
+          }
+
+          > select {
+            background: none;
+            border: 1px solid black;
+            border-radius: 3px;
+            font-family: "Rubik";
+            padding: 5px 10px;
+            width: 250px;
+
+            &:focus {
+              outline: none;
+            }
+          }
+        }
+      }
+    }
   }
 }
