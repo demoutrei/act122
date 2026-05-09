@@ -1,1 +1,88 @@
 @import url('../../base.css');
+
+
+#mainContent {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+  justify-content: center;
+  
+  > #student-profile, > #student-settings {
+    background-color: white;
+    border-radius: 13px;
+    box-sizing: border-box;
+    height: 380px;
+    overflow: clip;
+  }
+
+  > #student-profile {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 22px 13px;
+    width: 280px;
+
+    > #profile-picture {
+      align-self: center;
+      aspect-ratio: 1 / 1;
+      width: 40%;
+    }
+
+    > #profile-name {
+      align-self: center;
+      font-size: 1.1em;
+      font-weight: 500;
+    }
+  }
+
+  > #student-settings {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    width: 800px;
+
+    > header {
+      box-sizing: border-box;
+      width: 165px;
+
+      > nav {
+        background-color: #EFEFEF;
+        border-right: 2px solid lightgray;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        height: 100%;
+        align-items: center;
+        overflow-x: clip;
+        overflow-y: auto;
+        padding: 10px 10px;
+
+        > button {
+          background: none;
+          border: none;
+          border-radius: 5px;
+          color: var(--signature-blue);
+          font-family: "Rubik";
+          font-weight: 500;
+          padding: 8px 13px;
+          width: 100%;
+
+          &:hover {
+            background-color: lightgray;
+            cursor: pointer;
+          }
+
+          &.active {
+            font-weight: 800;
+          }
+
+          &#navigation-logOut {
+            color: red;
+          }
+        }
+      }
+    }
+  }
+}
