@@ -27,6 +27,10 @@
       align-self: center;
       aspect-ratio: 1 / 1;
       width: 40%;
+
+      &:hover {
+        cursor: pointer;
+      }
     }
 
     > #profile-name {
@@ -67,6 +71,7 @@
           font-family: "Rubik";
           font-weight: 500;
           padding: 8px 13px;
+          text-align: left;
           width: 100%;
 
           &:hover {
@@ -92,11 +97,137 @@
       width: calc(100% - 165px);
 
       > section {
-        border: 1px solid red;
         box-sizing: border-box;
-        height: 100%;
-        overflow-x: clip;
-        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding-top: 18px;
+
+        > div {
+          box-sizing: border-box;
+          display: flex;
+          flex-direction: row;
+          font-size: 1em;
+          justify-content: space-between;
+          padding: 10px 15px;
+          position: relative;
+
+          &.editable {
+            &::after {
+              aspect-ratio: 1 / 1;
+              background-image: url('../../assets/edit.png');
+              background-size: cover;
+              content: "";
+              height: max-content;
+              justify-self: end;
+              width: 20px;
+            }
+            
+            &:hover {
+              cursor: pointer;
+            }
+          }
+          
+          &#section-account-studentId::before {
+            color: var(--signature-blue);
+            content: "Student ID";
+            font-size: 0.8em;
+            font-style: italic;
+            font-weight: 500;
+            position: absolute;
+            top: -5px;
+          }
+          
+          &#section-account-studentName::before {
+            color: var(--signature-blue);
+            content: "Student Name";
+            font-size: 0.8em;
+            font-style: italic;
+            font-weight: 500;
+            position: absolute;
+            top: -5px;
+          }
+
+          &#section-account-sex::before {
+            color: var(--signature-blue);
+            content: "Sex";
+            font-size: 0.8em;
+            font-style: italic;
+            font-weight: 500;
+            position: absolute;
+            top: -5px;
+          }
+
+          &#section-account-birthDate::before {
+            color: var(--signature-blue);
+            content: "Birth Date";
+            font-size: 0.8em;
+            font-style: italic;
+            font-weight: 500;
+            position: absolute;
+            top: -5px;
+          }
+
+          &#section-account-address::before {
+            color: var(--signature-blue);
+            content: "Address";
+            font-size: 0.8em;
+            font-style: italic;
+            font-weight: 500;
+            position: absolute;
+            top: -5px;
+          }
+
+          &#section-account-emailAddress::before {
+            color: var(--signature-blue);
+            content: "Email Address";
+            font-size: 0.8em;
+            font-style: italic;
+            font-weight: 500;
+            position: absolute;
+            top: -5px;
+          }
+
+          &#section-account-contactNumber::before {
+            color: var(--signature-blue);
+            content: "Contact Number";
+            font-size: 0.8em;
+            font-style: italic;
+            font-weight: 500;
+            position: absolute;
+            top: -5px;
+          }
+          
+          &#section-account-nationality::before {
+            color: var(--signature-blue);
+            content: "Nationality";
+            font-size: 0.8em;
+            font-style: italic;
+            font-weight: 500;
+            position: absolute;
+            top: -5px;
+          }
+
+          &#section-account-status::before {
+            color: var(--signature-blue);
+            content: "Status";
+            font-size: 0.8em;
+            font-style: italic;
+            font-weight: 500;
+            position: absolute;
+            top: -5px;
+          }
+
+          &#section-account-religion::before {
+            color: var(--signature-blue);
+            content: "Religion";
+            font-size: 0.8em;
+            font-style: italic;
+            font-weight: 500;
+            position: absolute;
+            top: -5px;
+          }
+        }
       }
     }
   }
