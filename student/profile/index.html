@@ -34,13 +34,16 @@
       <section id="student-settings">
         <header>
           <nav>
-            <button id="navigation-account" class="active">Account</button>
-            <button id="navigation-notifications">Notifications</button>
-            <button id="navigation-settings">Settings</button>
-            <button id="navigation-logOut">Log Out</button>
+            <button id="navigation-account" onclick="scrollToView('#section-account')">Account</button>
+            <button id="navigation-notifications" onclick="scrollToView('#section-notifications')">Notifications</button>
+            <button id="navigation-logOut" onclick="scrollToView('#section-logOut')">Log Out</button>
           </nav>
         </header>
-        <main></main>
+        <main>
+          <section id="section-account"></section>
+          <section id="section-notifications"></section>
+          <section id="section-logOut"></section>
+        </main>
       </section>
     </main>
     <footer id="footerContent">
@@ -49,6 +52,6 @@
         <div id="name">UNIVERSITY OF SOUTHERN PHILIPPINES FOUNDATION</div>
       </div>
     </footer>
+    <script src="index.js"></script>
   </body>
-  <script src="index.js"></script>
 </html>

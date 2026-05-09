@@ -84,5 +84,20 @@
         }
       }
     }
+
+    > main {
+      overflow-x: clip;
+      overflow-y: auto;
+      scroll-behavior: smooth;
+      width: calc(100% - 165px);
+
+      > section {
+        border: 1px solid red;
+        box-sizing: border-box;
+        height: 100%;
+        overflow-x: clip;
+        overflow-y: auto;
+      }
+    }
   }
 }
