@@ -197,6 +197,8 @@ body {
   gap: 5px;
   height: calc(100% - 40px);
   overflow-x: visible;
+  overflow-y: clip;
+  pointer-events: none;
   position: fixed;
   right: 15px;
   width: 250px;
@@ -211,6 +213,7 @@ body {
     display: flex;
     flex-direction: column;
     padding: 8px 10px;
+    pointer-events: auto;
 
     &.fadeOut {
       opacity: 0;
