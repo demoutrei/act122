@@ -36,16 +36,13 @@ body {
         border: 1px solid black;
         border-radius: 10px;
         box-sizing: border-box;
+        cursor: pointer;
         display: flex;
         flex-direction: column;
         gap: 30px;
         justify-content: center;
         padding: 1em;
         width: 160px;
-
-        &:hover {
-          cursor: pointer;
-        }
 
         &.selected {
           border: 2px solid blue;
@@ -97,20 +94,14 @@ body {
         border: none;
         border-radius: 7px;
         color: white;
+        cursor: pointer;
         font-family: "Rubik";
         padding: 8px 3px;
         width: 100px;
 
         &:disabled {
           background-color: #8E84FF;
-
-          &:hover {
-            cursor: not-allowed;
-          }
-        }
-
-        &:hover {
-          cursor: pointer;
+          cursor: not-allowed;
         }
       }
     }

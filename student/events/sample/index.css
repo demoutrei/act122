@@ -71,6 +71,7 @@
             background: linear-gradient(to left, var(--primary) 50%, darkgray 50%) right;
             background-size: 200%;
             border-left: 3px solid gray;
+            cursor: pointer;
             display: flex;
             flex-direction: column;
             padding: 5px 10px;
@@ -79,7 +80,6 @@
             
             &:hover {
               background-position: left;
-              cursor: pointer;
             }
 
             &.cancelled {
@@ -201,24 +201,18 @@
       border: none;
       border-radius: 13px;
       color: white;
+      cursor: pointer;
       font-size: 0.9em;
       font-weight: 500;
       padding: 4px 14px;
       position: absolute;
       right: 30px;
       top: 20px;
-
-      &:hover {
-        cursor: pointer;
-      }
       
       &:disabled {
         background-color: #6F9CDE;
+        cursor: not-allowed;
         font-weight: bold;
-
-        &:hover {
-          cursor: not-allowed;
-        }
       }
     }
   }

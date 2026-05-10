@@ -5,6 +5,19 @@
 }
 
 
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
 body {
   background-color: var(--primary);
   margin: 0;
@@ -29,16 +42,13 @@ body {
   
   > #header-yellow {
     background-image: linear-gradient(-20deg, #DDDF00, var(--signature-yellow));
+    cursor: pointer;
     height: 58px;
     left: -1.5em;
     position: relative;
     transform: skew(-20deg);
     width: 350px;
     z-index: 4;
-
-    &:hover {
-      cursor: pointer;
-    }
 
     > #header-icon {
       aspect-ratio: 1 / 1;
@@ -80,6 +90,7 @@ body {
       
       > .navigation-item {
         color: lightgray;
+        cursor: pointer;
         display: flex;
         font-family: "Rubik";
         height: 100%;
@@ -90,7 +101,6 @@ body {
   
         &:hover {
           color: white;
-          cursor: pointer;
         }
 
         &:hover > .sub-navigation {
@@ -175,6 +185,46 @@ body {
       font-size: 1.2em;
       font-weight: bold;
       width: 17rem;
+    }
+  }
+}
+
+#container-notifications {
+  bottom: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 5px;
+  height: calc(100% - 40px);
+  overflow-x: visible;
+  position: fixed;
+  right: 15px;
+  width: 250px;
+  z-index: 6;
+
+  > .notification {
+    animation: slideIn 0.2s ease-out;
+    background-color: var(--signature-yellow);
+    border-radius: 6px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    padding: 8px 10px;
+
+    &.fadeOut {
+      opacity: 0;
+      transform: scale(0.9);
+      transition: 0.3s ease;
+    }
+    
+    > .notification-title {
+      font-weight: 500;
+      font-size: 0.9em;
+    }
+
+    > .notification-message {
+      font-size: 0.8em;
     }
   }
 }

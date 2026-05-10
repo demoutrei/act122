@@ -26,11 +26,8 @@
     > #profile-picture {
       align-self: center;
       aspect-ratio: 1 / 1;
+      cursor: pointer;
       width: 40%;
-
-      &:hover {
-        cursor: pointer;
-      }
     }
 
     > #profile-name {
@@ -68,6 +65,7 @@
           border: none;
           border-radius: 5px;
           color: var(--signature-blue);
+          cursor: pointer;
           font-family: "Rubik";
           font-weight: 500;
           padding: 8px 13px;
@@ -76,7 +74,6 @@
 
           &:hover {
             background-color: lightgray;
-            cursor: pointer;
           }
 
           &.active {
@@ -146,6 +143,8 @@
           position: relative;
 
           &.editable {
+            cursor: pointer;
+            
             &::after {
               aspect-ratio: 1 / 1;
               background-image: url('../../assets/edit.png');
@@ -155,13 +154,11 @@
               justify-self: end;
               width: 20px;
             }
-            
-            &:hover {
-              cursor: pointer;
-            }
           }
 
           &.toggleable {
+            cursor: pointer;
+            
             &::after {
               aspect-ratio: 1 / 1;
               background-image: url('../../assets/buttonUntoggled.png');
@@ -175,20 +172,20 @@
             &.active::after {
               background-image: url('../../assets/buttonToggled.png');
             }
-
-            &:hover {
-              cursor: pointer;
-            }
           }
           
-          &#section-account-studentId::before {
-            color: var(--signature-blue);
-            content: "Student ID";
-            font-size: 0.8em;
-            font-style: italic;
-            font-weight: 500;
-            position: absolute;
-            top: -5px;
+          &#section-account-studentId {
+            cursor: pointer;
+            
+            &::before {
+              color: var(--signature-blue);
+              content: "Student ID";
+              font-size: 0.8em;
+              font-style: italic;
+              font-weight: 500;
+              position: absolute;
+              top: -5px;
+            }
           }
           
           &#section-account-studentName::before {
