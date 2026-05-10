@@ -5,6 +5,18 @@ function scrollToView(elementId) {
   })
 }
 
+document.querySelector("#section-notifications-email").addEventListener(
+  "click",
+  (_) => {
+    document.querySelector("#section-notifications-email").classList.toggle("active");
+  }
+)
+
+document.querySelector("#section-notifications-contactNumber").addEventListener(
+  "click",
+  (_) => document.querySelector("#section-notifications-contactNumber").classList.toggle("active")
+)
+
 (new IntersectionObserver(
   (entries) => {
     entries.forEach(

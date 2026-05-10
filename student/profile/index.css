@@ -103,6 +103,39 @@
         gap: 8px;
         padding-top: 18px;
 
+        &#section-account::before {
+          color: var(--signature-blue);
+          content: "Account";
+          display: block;
+          padding: 0 15px;
+          font-weight: 900;
+        }
+
+        &#section-notifications {
+          gap: 6px;
+          
+          &::before {
+            color: var(--signature-blue);
+            content: "Notifications";
+            display: block;
+            padding: 0 15px;
+            font-weight: 900;
+          }
+
+          > div {
+            padding-bottom: 0;
+            padding-top: 0;
+          }
+        }
+
+        &#section-logOut::before {
+          color: var(--signature-blue);
+          content: "Log Out";
+          display: block;
+          padding: 0 15px;
+          font-weight: 900;
+        }
+
         > div {
           box-sizing: border-box;
           display: flex;
@@ -123,6 +156,26 @@
               width: 20px;
             }
             
+            &:hover {
+              cursor: pointer;
+            }
+          }
+
+          &.toggleable {
+            &::after {
+              aspect-ratio: 1 / 1;
+              background-image: url('../../assets/buttonUntoggled.png');
+              background-size: cover;
+              content: "";
+              height: max-content;
+              justify-self: end;
+              width: 20px;
+            }
+            
+            &.active::after {
+              background-image: url('../../assets/buttonToggled.png');
+            }
+
             &:hover {
               cursor: pointer;
             }
@@ -227,6 +280,13 @@
             position: absolute;
             top: -5px;
           }
+        }
+
+        > p {
+          font-size: 0.8em;
+          margin: 0;
+          padding: 0 15px;
+          padding-bottom: 4px;
         }
       }
     }
