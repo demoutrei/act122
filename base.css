@@ -200,11 +200,11 @@ body {
   position: fixed;
   right: 15px;
   width: 250px;
-  z-index: 6;
+  z-index: 1;
 
   > .notification {
     animation: slideIn 0.2s ease-out;
-    background-color: var(--signature-yellow);
+    background-image: linear-gradient(-20deg, #DDDF00, var(--signature-yellow));
     border-radius: 6px;
     box-sizing: border-box;
     cursor: pointer;
