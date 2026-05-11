@@ -215,5 +215,80 @@
         font-weight: bold;
       }
     }
+
+    > section {
+      display: flex;
+      flex-direction: column;
+      margin-top: 8px;
+      padding: 8px 0;
+      position: relative;
+
+      &#section-notification {
+        display: none;
+        
+        &::before {
+          color: var(--signature-blue);
+          content: "NOTIFICATION";
+          display: block;
+          font-size: 1.23em;
+          font-weight: bold;
+        }
+
+        &.show {
+          display: flex;
+        }
+      }
+      
+      > div {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        font-size: 1em;
+        justify-content: space-between;
+        margin-top: 8px;
+        position: relative;
+
+        &.toggleable {
+          cursor: pointer;
+          
+          &::after {
+            aspect-ratio: 1 / 1;
+            background-image: url('../../../assets/buttonUntoggled.png');
+            background-size: cover;
+            content: "";
+            height: max-content;
+            justify-self: end;
+            width: 20px;
+          }
+
+          &.active::after {
+            background-image: url('../../../assets/buttonToggled.png');
+          }
+        }
+      }
+      
+      > p {
+        font-size: 0.8em;
+        margin: 3px 0;
+        padding: 0;
+      }
+
+      > select {
+        border: 1px solid var(--signature-blue);
+        border-radius: 10px;
+        cursor: pointer;
+        padding: 3px 5px;
+        
+        &:focus {
+          outline: none;
+        }
+      }
+      
+      > .topRight {
+        position: absolute;
+        right: 0;
+        top: 7px;
+      }
+    }
   }
 }
