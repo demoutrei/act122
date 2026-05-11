@@ -36,7 +36,7 @@ document.querySelector("#section-notification-contactNumber").addEventListener(
 
 document.querySelector("#reminderTime").addEventListener(
   "change",
-  (event) => notify("", `Updated delay of reminder to ${event.target.value}`)
+  (event) => notify("", `Updated delay of reminder to: ${event.target.value}`)
 )
 
 
