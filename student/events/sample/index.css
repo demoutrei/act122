@@ -245,7 +245,8 @@
         flex-direction: row;
         font-size: 1em;
         justify-content: space-between;
-        margin-top: 8px;
+        margin-top: 3px;
+        padding: 5px 8px;
         position: relative;
 
         &.toggleable {
@@ -259,6 +260,10 @@
             height: max-content;
             justify-self: end;
             width: 20px;
+          }
+
+          &:hover {
+            background-color: lightgray;
           }
 
           &.active::after {
