@@ -7,6 +7,11 @@ export function register() {
   button.innerText = "Registered";
   notify("", "Successfully registered for the event.");
   document.querySelector("#section-notification").classList.add("show");
+  document.querySelector("#button-QR").classList.add("show");
+}
+
+export function displayQrCode() {
+  document.querySelector("#section-QR").classList.add("show");
 }
 
 
@@ -39,5 +44,16 @@ document.querySelector("#reminderTime").addEventListener(
   (event) => notify("", `Updated delay of reminder to: ${event.target.value}`)
 )
 
+document.querySelector("#button-close-qrCode").addEventListener(
+  "click",
+  (_) => document.querySelector("#section-QR").classList.remove("show")
+)
 
+document.querySelector("#button-downloadQrCode").addEventListener(
+  "click",
+  (_) => notify("", "Successfully downloaded QR code")
+)
+
+
+window.displayQrCode = displayQrCode;
 window.register = register;

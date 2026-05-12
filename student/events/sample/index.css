@@ -118,6 +118,11 @@
               }
             }
 
+            &.selected {
+              background-position: left;
+              color: white;
+            }
+
             > .container-month-event-name {
               font-weight: 500;
             }
@@ -216,6 +221,31 @@
       }
     }
 
+    > #button-QR {
+      align-items: center;
+      background: none;
+      border: 1px solid var(--signature-blue);
+      border-radius: 13px;
+      cursor: pointer;
+      display: none;
+      flex-direction: row;
+      font-family: "Rubik";
+      gap: 7px;
+      padding: 3px 10px;
+      position: absolute;
+      right: 30px;
+      top: 50px;
+
+      &.show {
+        display: flex;
+      }
+      
+      > img {
+        aspect-ratio: 1 / 1;
+        width: 17px;
+      }
+    }
+
     > section {
       display: flex;
       flex-direction: column;
@@ -236,6 +266,63 @@
 
         &.show {
           display: flex;
+        }
+      }
+
+      &#section-QR {
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.85);
+        display: none;
+        height: calc(100vh - 15px);
+        justify-content: center;
+        left: 0;
+        overflow: clip;
+        position: absolute;
+        top: -54px;
+        width: 100vw;
+        z-index: 2;
+
+        &.show {
+          display: flex;
+        }
+
+        > #container-QR {
+          background-color: white;
+          border-radius: 10px;
+          padding: 10px 15px;
+
+          > #container-QR-dummy {
+            aspect-ratio: 1 / 1;
+            width: 200px;
+          }
+
+          > #container-QR-info {
+            align-items: center;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 15px;
+            width: 225px;
+
+            > #button-downloadQrCode {
+              align-items: center;
+              background-color: lightgray;
+              border: 1px solid var(--signature-blue);
+              border-radius: 8px;
+              cursor: pointer;
+              display: flex;
+              flex-direction: row;
+              font-family: "Rubik";
+              gap: 5px;
+              padding: 3px 10px;
+              
+              > img {
+                aspect-ratio: 1 / 1;
+                width: 25px;
+              }
+            }
+          }
         }
       }
       

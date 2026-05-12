@@ -65,7 +65,7 @@
               <div class="container-month-name">May 6 2026</div>
             </header>
             <main>
-              <div class="container-event ongoing">
+              <div class="container-event ongoing selected">
                 <div class="container-month-event-name">Sample Event</div>
                 <div class="container-month-event-description">Sample event description</div>
               </div>
@@ -119,7 +119,7 @@
       <section id="eventInfo">
         <div id="eventInfo-name" class="ongoing">Sample Event</div>
         <div id="eventInfo-description">Sample event description</div>
-        <div id="eventInfo-time" title="Schedule">5:00 p.m - 8:00 p.m</div>
+        <div id="eventInfo-time" title="Schedule">May 6 2026 | 5:00 p.m - 8:00 p.m</div>
         <div id="eventInfo-venue" title="Venue">CCS Laboratory 3</div>
         <section id="section-notification">
           <p>How do you want to be notified?</p>
@@ -138,6 +138,25 @@
           </select>
         </section>
         <button id="button-register" onclick="register();">Register</button>
+        <button id="button-QR" onclick="displayQrCode();">
+          <img src="../../../assets/qrCode.png" alt="QR Attendance" title="QR Code"/>
+          QR Code
+        </button>
+        <section id="section-QR">
+          <div id="container-QR">
+            <img id="container-QR-dummy" src="../../../assets/dummyQr.png"/>
+            <div id="container-QR-info">
+              <p>Take a screenshot or download this QR code. This will serve as verification for your attendance in the venue.</p>
+              <button id="button-downloadQrCode">
+                <img src="../../../assets/download.png"/>
+                Download
+              </button>
+              <button id="button-close-qrCode" class="button-close">
+                <img src="../../../assets/close.png" alt="Close window"/>
+              </button>
+            </div>
+          </div>
+        </section>
       </section>
     </main>
     <div id="container-notifications"></div>

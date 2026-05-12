@@ -195,14 +195,14 @@ body {
   display: flex;
   flex-direction: column-reverse;
   gap: 5px;
-  height: calc(100% - 40px);
+  height: 100%;
   overflow-x: visible;
   overflow-y: clip;
   pointer-events: none;
   position: fixed;
   right: 15px;
   width: 250px;
-  z-index: 1;
+  z-index: 2;
 
   > .notification {
     animation: slideIn 0.2s ease-out;
@@ -229,5 +229,20 @@ body {
     > .notification-message {
       font-size: 0.8em;
     }
+  }
+}
+
+.button-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+
+  > img {
+    aspect-ratio: 1 / 1;
+    width: 18px;
   }
 }
