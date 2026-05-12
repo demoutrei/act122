@@ -36,3 +36,8 @@ document.querySelector("#section-account-studentId").addEventListener(
   "click",
   (_) => notify("", "Copied your Student ID to clipboard")
 )
+
+document.querySelector("#button-logOut").addEventListener(
+  "click",
+  (_) => window.open('../../', "_self")
+)

@@ -125,12 +125,20 @@
           }
         }
 
-        &#section-logOut::before {
-          color: var(--signature-blue);
-          content: "Log Out";
-          display: block;
-          padding: 0 15px;
-          font-weight: 900;
+        &#section-logOut {
+          padding: 9px 0;
+
+          > #button-logOut {
+            align-self: center;
+            aspect-ratio: 9 / 3;
+            background-color: red;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100px;
+          }
         }
 
         > div {
