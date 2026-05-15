@@ -51,7 +51,7 @@ document.querySelector("#button-close-qrCode").addEventListener(
 
 document.querySelector("#button-downloadQrCode").addEventListener(
   "click",
-  (_) => notify("", "Successfully downloaded QR code")
+  (_) => notify("", "Starting QR code download...")
 )
 
 

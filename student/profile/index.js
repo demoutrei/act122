@@ -39,5 +39,19 @@ document.querySelector("#section-account-studentId").addEventListener(
 
 document.querySelector("#button-logOut").addEventListener(
   "click",
-  (_) => window.open('../../', "_self")
+  (_) => document.querySelector("#section-logOut-confirmation").classList.add("show")
+)
+
+document.querySelector("#confirmation-action-cancel").addEventListener(
+  "click", (_) => document.querySelector("#section-logOut-confirmation").classList.remove("show")
+)
+
+document.querySelector("#confirmation-action-confirm").addEventListener(
+  "click", (_) => {
+    notify("", "Logging out...");
+    setTimeout(
+      () => window.open('../../', "_self"),
+      1500
+    )
+  }
 )
