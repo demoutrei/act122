@@ -79,6 +79,26 @@ body {
     justify-content: end;
     width: 100vw;
 
+    > #container-account {
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: absolute;
+      left: 380px;
+
+      > #account-profilePicture {
+        aspect-ratio: 1 / 1;
+        position: absolute;
+        left: -38px;
+        width: 30px;
+      }
+
+      > #account-id {
+        font-size: 0.7em;
+      }
+    }
+
     > #topbar-navigation {
       align-items: center;
       display: flex;
