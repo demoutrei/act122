@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300..900&display=swap" rel="stylesheet">
+    <link rel="icon" href="../../assets/uspf.png"/>
+    <link rel="stylesheet" href="index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inbox</title>
+  </head>
+  <body>
+    <header id="headerContent">
+      <div id="header-yellow">
+        <img id="header-icon" src="../../assets/uspf.png"/>
+        <div id="header-title">UNIVERSITY OF SOUTHERN PHILIPPINES FOUNDATION</div>
+      </div>
+      <div id="header-blue">
+        <nav id="topbar-navigation">
+          <a href="../profile" class="navigation-item">
+            <div class="title">Profile</div>
+          </a>
+          <a class="navigation-item" style="color: white;">
+            <div class="title">Inbox</div>
+          </a>
+          <a href="../events" class="navigation-item">
+            <div class="title">Events</div>
+          </a>
+        </nav>
+      </div>
+    </header>
+    <main id="mainContent">
+      <input id="input-search" type="text" placeholder="Search mails..."/>
+      <header id="sidePanel">
+        <button id="button-composeMail">Compose</button>
+        <button id="button-inboxMails">
+          <div class="title">Inbox</div>
+          <div class="notif-count">2</div>
+        </button>
+        <button id="button-draftMails">
+          <div class="title">Drafts</div>
+          <div class="notif-count"></div>
+        </button>
+        <button id="button-sentMails">
+          <div class="title">Sent</div>
+          <div class="notif-count"></div>
+        </button>
+        <button id="button-trashMails">
+          <div class="title">Trash</div>
+          <div class="notif-count"></div>
+        </button>
+        <button id="button-spamMails">
+          <div class="title">Spam</div>
+          <div class="notif-count"></div>
+        </button>
+      </header>
+      <main id="mainPanel">
+        <div class="mail">
+          <div class="mail-actions">
+            <img class="mail-actions-reply" title="Reply" src="../../assets/reply.png"/>
+            <img class="mail-actions-markAsRead" title="Mark as read" src="../../assets/markAsRead.png"/>
+            <img class="mail-actions-trash" title="Move to trash" src="../../assets/trash.png"/>
+          </div>
+          <div class="mail-title">Sample Mail Title</div>
+          <div class="mail-description">Sample mail description</div>
+        </div>
+        <div class="mail">
+          <div class="mail-actions">
+            <img class="mail-actions-markAsRead" title="Mark as read" src="../../assets/markAsRead.png"/>
+            <img class="mail-actions-trash" title="Move to trash" src="../../assets/trash.png"/>
+          </div>
+          <div class="mail-title">Classes Suspended</div>
+          <div class="mail-description">It's a prank</div>
+        </div>
+      </main>
+      <footer id="mailPanel"></footer>
+    </main>
+    <footer id="footerContent">
+      <div id="footer-top">
+        <img src="../../assets/uspf.png"/>
+        <div id="name">UNIVERSITY OF SOUTHERN PHILIPPINES FOUNDATION</div>
+      </div>
+    </footer>
+    <div id="container-notifications"></div>
+    <script type="module" src="index.js"></script>
+  </body>
+</html>

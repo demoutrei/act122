@@ -1,3 +1,6 @@
+import { notify } from './base.js';
+
+
 const inputLogInAccountId = document.querySelector("#logIn-info-accountId");
 const inputLogInPassword = document.querySelector("#logIn-info-password");
 const logInButton = document.querySelector("#button-logIn");
@@ -47,6 +50,10 @@ logInButton.addEventListener(
   "click",
   (_) => {
     const a = document.querySelector(".logIn-type.selected");
-    window.open(`./${a.dataset.type}/events`, "_self");
+    notify("Credentials verified", "Logging in...")
+    setTimeout(
+      () => {window.open(`./${a.dataset.type}/events`, "_self")},
+      1500
+    );
   }
 )
