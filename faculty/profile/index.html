@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300..900&display=swap" rel="stylesheet">
+    <link rel="icon" href="../../assets/uspf.png"/>
+    <link rel="stylesheet" href="index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+  </head>
+  <body>
+    <header id="headerContent">
+      <div id="header-yellow">
+        <img id="header-icon" src="../../assets/uspf.png"/>
+        <div id="header-title">UNIVERSITY OF SOUTHERN PHILIPPINES FOUNDATION</div>
+      </div>
+      <div id="header-blue">
+        <div id="container-account">
+          <img id="account-profilePicture" src="../../assets/user2.png"/>
+          <div id="account-name">Admin</div>
+          <div id="account-id">F123456789</div>
+        </div>
+        <nav id="topbar-navigation">
+          <a class="navigation-item" style="color: white;">
+            <div class="title">Profile</div>
+          </a>
+          <a href="../inbox" class="navigation-item">
+            <div class="title">Inbox</div>
+          </a>
+          <a href="../events" class="navigation-item">
+            <div class="title">Events</div>
+          </a>
+        </nav>
+      </div>
+    </header>
+    <main id="mainContent">
+      <section id="student-profile">
+        <img id="profile-picture" title="Upload Profile Picture" src="../../assets/user.png"/>
+        <div id="profile-name">Demoutrei Kurosuke</div>
+        <div id="profile-studentId">F123456789</div>
+        <div id="profile-program">BS in Computer Science</div>
+        <div id="profile-yearLevel">Freshman</div>
+      </section>
+      <section id="student-settings">
+        <header>
+          <nav>
+            <button id="navigation-account" onclick="scrollToView('#section-account')">Account</button>
+            <button id="navigation-notifications" onclick="scrollToView('#section-notifications')">Notifications</button>
+            <button id="navigation-logOut" onclick="scrollToView('#section-logOut')">Log Out</button>
+          </nav>
+        </header>
+        <main>
+          <section id="section-account">
+            <div id="section-account-studentId" title="Copy ID">ABC1234567</div>
+            <div id="section-account-studentName">
+              <div id="section-account-studentName-lastName">Kurosuke</div>
+              <div id="section-account-studentName-firstName">Demoutrei</div>
+              <div id="section-account-studentName-middleInitial">E.</div>
+            </div>
+            <div id="section-account-sex">Male</div>
+            <div id="section-account-birthDate">September 6 2026</div>
+            <div id="section-account-address" class="editable" title="Edit field">Sitio Pait, Ba't Ang Sakit Street, Earth, The World</div>
+            <div id="section-account-emailAddress" class="editable" title="Edit field">example@domain.com</div>
+            <div id="section-account-contactNumber" class="editable" title="Edit field">1234-567-8900</div>
+            <div id="section-account-nationality" class="editable" title="Edit field">Human</div>
+            <div id="section-account-status" class="editable" title="Edit field">Single</div>
+            <div id="section-account-religion" class="editable" title="Edit field">Roman Catholic</div>
+          </section>
+          <section id="section-notifications">
+            <p>Control how you receive notifications.</p>
+            <div id="section-notifications-email" class="toggleable active">Email Address</div>
+            <div id="section-notifications-contactNumber" class="toggleable">Contact Number</div>
+          </section>
+          <section id="section-logOut">
+            <button id="button-logOut">Log Out</button>
+            <section id="section-logOut-confirmation">
+              <div id="container-confirmation">
+                <p>Are you sure you want to log out?</p>
+                <div id="confirmation-actions">
+                  <button id="confirmation-action-cancel">Cancel</button>
+                  <button id="confirmation-action-confirm">Log Out</button>
+                </div>
+              </div>
+            </section>
+          </section>
+        </main>
+      </section>
+    </main>
+    <footer id="footerContent">
+      <div id="footer-top">
+        <img src="../../assets/uspf.png"/>
+        <div id="name">UNIVERSITY OF SOUTHERN PHILIPPINES FOUNDATION</div>
+      </div>
+    </footer>
+    <div id="container-notifications"></div>
+    <script type="module" src="index.js"></script>
+    <script type="module" src="../../base.js"></script>
+    <script type="module">
+      import { scrollToView } from './index.js';
+
+      window.scrollToView = scrollToView;
+      
+      (new IntersectionObserver(
+        (entries) => {
+          entries.forEach(
+            (entry) => {
+              const target = document.querySelector("#navigation-account");
+              if (entry.isIntersecting) {
+                target.classList.add("active");
+              } else {
+                target.classList.remove("active");
+              }
+            }
+          )
+        },
+        {
+          threshold: 0.5
+        }
+      )).observe(document.querySelector("#section-account"));
+
+      (new IntersectionObserver(
+        (entries) => {
+          entries.forEach(
+            (entry) => {
+              const target = document.querySelector("#navigation-notifications");
+              if (entry.isIntersecting) {
+                target.classList.add("active");
+              } else {
+                target.classList.remove("active");
+              }
+            }
+          )
+        },
+        {
+          threshold: 0.5
+        }
+      )).observe(document.querySelector("#section-notifications"));
+
+      (new IntersectionObserver(
+        (entries) => {
+          entries.forEach(
+            (entry) => {
+              const target = document.querySelector("#navigation-logOut");
+              if (entry.isIntersecting) {
+                target.classList.add("active");
+              } else {
+                target.classList.remove("active");
+              }
+            }
+          )
+        },
+        {
+          threshold: 0.5
+        }
+      )).observe(document.querySelector("#section-logOut"));
+    </script>
+  </body>
+</html>

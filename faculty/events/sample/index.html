@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300..900&display=swap" rel="stylesheet">
+    <link rel="icon" href="../../../assets/uspf.png"/>
+    <link rel="stylesheet" href="index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Event</title>
+  </head>
+  <body>
+    <header id="headerContent">
+      <div id="header-yellow">
+        <img id="header-icon" src="../../../assets/uspf.png"/>
+        <div id="header-title">UNIVERSITY OF SOUTHERN PHILIPPINES FOUNDATION</div>
+      </div>
+      <div id="header-blue">
+        <div id="container-account">
+          <img id="account-profilePicture" src="../../../assets/user2.png"/>
+          <div id="account-name">Admin</div>
+          <div id="account-id">F123456789</div>
+        </div>
+        <nav id="topbar-navigation">
+          <a href="../../profile" class="navigation-item">
+            <div class="title">Profile</div>
+          </a>
+          <a href="../../inbox" class="navigation-item">
+            <div class="title">Inbox</div>
+          </a>
+          <a href="../" class="navigation-item" style="color: white;">
+            <div class="title">Events</div>
+          </a>
+        </nav>
+      </div>
+    </header>
+    <main id="mainContent">
+      <section id="eventsList">
+        <div id="eventsList-legends">
+          <div class="eventsList-legend">
+            <div class="eventsList-legend-color" style="background-color: #0C8900;"></div>
+            <div class="eventsList-legend-name">Completed</div>
+          </div>
+          <div class="eventsList-legend">
+            <div class="eventsList-legend-color" style="background-color: #FF7600;"></div>
+            <div class="eventsList-legend-name">Ongoing</div>
+          </div>
+          <div class="eventsList-legend">
+            <div class="eventsList-legend-color" style="background-color: gray;"></div>
+            <div class="eventsList-legend-name">Upcoming</div>
+          </div>
+          <div class="eventsList-legend">
+            <div class="eventsList-legend-color" style="background-color: red;"></div>
+            <div class="eventsList-legend-name">Cancelled</div>
+          </div>
+        </div>
+        <div class="container-month">
+          <div class="container-month-date">
+            <header>
+              <div class="container-month-name">April 30 2026</div>
+            </header>
+            <main>
+              <div class="container-event ended">
+                <div class="container-month-event-name">PSiTE7 Cebu ICT Congress 2026</div>
+              </div>
+              <div class="container-event ended">
+                <div class="container-month-event-name">PSiTE7 Innovation Challenge</div>
+              </div>
+            </main>
+          </div>
+          <div class="container-month-date">
+            <header>
+              <div class="container-month-name">May 6 2026</div>
+            </header>
+            <main>
+              <div class="container-event ongoing selected">
+                <div class="container-month-event-name">Sample Event</div>
+                <div class="container-month-event-description">Sample event description</div>
+              </div>
+            </main>
+          </div>
+          <div class="container-month-date">
+            <header>
+              <div class="container-month-name">May 11 2026</div>
+            </header>
+            <main>
+              <div class="container-event cancelled">
+                <div class="container-month-event-name">Lunes</div>
+                <div class="container-month-event-description">Lunes na naman!</div>
+              </div>
+            </main>
+          </div>
+          <div class="container-month-date">
+            <header>
+              <div class="container-month-name">May 15 2026</div>
+            </header>
+            <main>
+              <div class="container-event">
+                <div class="container-month-event-name">Rizal Tour</div>
+                <div class="container-month-event-description">Batch 1</div>
+              </div>
+            </main>
+          </div>
+          <div class="container-month-date">
+            <header>
+              <div class="container-month-name">May 22 2026</div>
+            </header>
+            <main>
+              <div class="container-event">
+                <div class="container-month-event-name">Rizal Tour</div>
+                <div class="container-month-event-description">Batch 2</div>
+              </div>
+            </main>
+          </div>
+          <div class="container-month-date">
+            <header>
+              <div class="container-month-name">May 27 2026</div>
+            </header>
+            <main>
+              <div class="container-event">
+                <div class="container-month-event-name">Eid al-Adha</div>
+              </div>
+            </main>
+          </div>
+        </div>
+      </section>
+      <section id="eventInfo">
+        <div id="eventInfo-name" class="ongoing">Sample Event</div>
+        <div id="eventInfo-description">Sample event description</div>
+        <div id="eventInfo-time" title="Schedule">May 6 2026 | 5:00 p.m - 8:00 p.m</div>
+        <div id="eventInfo-venue" title="Venue">CCS Laboratory 3</div>
+        <section id="section-notification">
+          <p>How do you want to be notified?</p>
+          <div id="section-notification-emailAddress" class="toggleable active">Email Address</div>
+          <div id="section-notification-contactNumber" class="toggleable">Contact Number</div>
+          <select id="reminderTime" class="topRight" title="Time of reminder">
+            <option value="3 minutes">3 minutes prior</option>
+            <option value="5 minutes">5 minutes prior</option>
+            <option value="15 minutes">15 minutes prior</option>
+            <option value="30 minutes">30 minutes prior</option>
+            <option value="1 hour">1 hour prior</option>
+            <option value="3 hours">3 hours prior</option>
+            <option value="6 hours">6 hours prior</option>
+            <option value="12 hours">12 hours prior</option>
+            <option value="24 hours">24 hours prior</option>
+          </select>
+        </section>
+        <button id="button-register" onclick="register();">Register</button>
+        <button id="button-QR" onclick="displayQrCode();">
+          <img src="../../../assets/qrCode.png" alt="QR Attendance" title="QR Code"/>
+          QR Code
+        </button>
+        <section id="section-QR">
+          <div id="container-QR">
+            <img id="container-QR-dummy" src="../../../assets/dummyQr.png"/>
+            <div id="container-QR-info">
+              <p>Take a screenshot or download this QR code. This will serve as verification for your attendance in the event.</p>
+              <button id="button-downloadQrCode">
+                <img src="../../../assets/download.png"/>
+                Download
+              </button>
+              <button id="button-close-qrCode" class="button-close">
+                <img src="../../../assets/close.png" alt="Close window"/>
+              </button>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+    <div id="container-notifications"></div>
+    <footer id="footerContent">
+      <div id="footer-top">
+        <img src="../../../assets/uspf.png"/>
+        <div id="name">UNIVERSITY OF SOUTHERN PHILIPPINES FOUNDATION</div>
+      </div>
+    </footer>
+    <script type="module" src="index.js"></script>
+  </body>
+</html>

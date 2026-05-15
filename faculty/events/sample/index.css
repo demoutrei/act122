@@ -1,0 +1,386 @@
+@import url('../../../base.css');
+
+
+#mainContent {
+  display: flex;
+  
+  > #eventsList {
+    overflow-x: clip;
+    overflow-y: auto;
+    padding-bottom: 15px;
+    width: 450px;
+
+    > #eventsList-legends {
+      background-color: var(--primary);
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      margin-bottom: 5px;
+      padding: 5px 10px;
+      padding-top: 17px;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+
+      > .eventsList-legend {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        font-size: 0.9em;
+        gap: 7px;
+
+        > .eventsList-legend-color {
+          aspect-ratio: 1 / 1;
+          height: max-content;
+          width: 10px;
+        }
+      }
+    }
+    
+    > .container-month {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      > .container-month-date {
+        display: flex;
+        flex-direction: row;
+        
+        > header {
+          display: flex;
+          flex-direction: column;
+          width: 150px;
+  
+          > .container-month-name {
+            align-self: end;
+            font-weight: 500;
+            padding: 5px 0;
+            padding-right: 15px;
+          }
+        }
+  
+        > main {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          position: relative;
+          width: calc(100% - 126px);
+  
+          > .container-event {
+            background: linear-gradient(to left, var(--primary) 50%, darkgray 50%) right;
+            background-size: 200%;
+            border-left: 3px solid gray;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            padding: 5px 10px;
+            transition: 0.35s ease-out;
+            width: calc(100% - 23px);
+            
+            &:hover {
+              background-position: left;
+            }
+
+            &.cancelled {
+              background: linear-gradient(to left, var(--primary) 50%, red 50%) right;
+              background-size: 200%;
+              border-left-color: red;
+              transition: 0.35s ease-out;
+
+              &:hover {
+                background-position: left;
+                color: white;
+              }
+            }
+
+            &.ended {
+              background: linear-gradient(to left, var(--primary) 50%, #0C8900 50%) right;
+              background-size: 200%;
+              border-left-color: #0C8900;
+              transition: 0.35s ease-out;
+
+              &:hover {
+                background-position: left;
+                color: white;
+              }
+            }
+
+            &.ongoing {
+              background: linear-gradient(to left, var(--primary) 50%, #FF7600 50%) right;
+              background-size: 200%;
+              border-left-color: #FF7600;
+              transition: 0.35s ease-out;
+
+              &:hover {
+                background-position: left;
+                color: white;
+              }
+            }
+
+            &.selected {
+              background-position: left;
+              color: white;
+            }
+
+            > .container-month-event-name {
+              font-weight: 500;
+            }
+            
+            > .container-month-event-description {
+              font-size: 0.8em;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  > #eventInfo {
+    align-self: center;
+    background-color: #F8F8F0;
+    box-sizing: border-box;
+    height: 100%;
+    padding: 15px 20px;
+    width: calc(100% - 450px);
+    
+    > #eventInfo-description {
+      font-size: 0.9em;
+    }
+    
+    > #eventInfo-name {
+      align-items: center;
+      display: flex;
+      font-size: 1.2em;
+      font-weight: 500;
+
+      &.ongoing:after {
+        background-color: #FF7600;
+        border-radius: 13px;
+        box-sizing: border-box;
+        color: white;
+        content: "ONGOING";
+        font-size: 0.6em;
+        font-weight: normal;
+        margin-left: 10px;
+        padding: 3px 7px;
+      }
+    }
+
+    > #eventInfo-time {
+      align-items: center;
+      display: flex;
+      margin-top: 18px;
+      width: max-content;
+
+      &::before {
+        aspect-ratio: 1 / 1;
+        background-image: url('../../../assets/time.png');
+        background-size: cover;
+        box-sizing: border-box;
+        content: "";
+        margin-right: 8px;
+        width: 18px;
+      }
+    }
+
+    > #eventInfo-venue {
+      align-items: center;
+      display: flex;
+      margin-top: 8px;
+      width: max-content;
+
+      &::before {
+        aspect-ratio: 1 / 1;
+        background-image: url('../../../assets/location.png');
+        background-size: cover;
+        box-sizing: border-box;
+        content: "";
+        margin-right: 8px;
+        width: 18px;
+      }
+    }
+
+    > #button-register {
+      background-color: var(--signature-blue);
+      border: none;
+      border-radius: 13px;
+      color: white;
+      cursor: pointer;
+      font-size: 0.9em;
+      font-weight: 500;
+      padding: 4px 14px;
+      position: absolute;
+      right: 30px;
+      top: 20px;
+      
+      &:disabled {
+        background-color: #6F9CDE;
+        cursor: not-allowed;
+        font-weight: bold;
+      }
+    }
+
+    > #button-QR {
+      align-items: center;
+      background: none;
+      border: 1px solid var(--signature-blue);
+      border-radius: 13px;
+      cursor: pointer;
+      display: none;
+      flex-direction: row;
+      font-family: "Rubik";
+      gap: 7px;
+      padding: 3px 10px;
+      position: absolute;
+      right: 30px;
+      top: 50px;
+
+      &.show {
+        display: flex;
+      }
+      
+      > img {
+        aspect-ratio: 1 / 1;
+        width: 17px;
+      }
+    }
+
+    > section {
+      display: flex;
+      flex-direction: column;
+      margin-top: 8px;
+      padding: 8px 0;
+      position: relative;
+
+      &#section-notification {
+        display: none;
+        
+        &::before {
+          color: var(--signature-blue);
+          content: "NOTIFICATION";
+          display: block;
+          font-size: 1.23em;
+          font-weight: bold;
+        }
+
+        &.show {
+          display: flex;
+        }
+      }
+
+      &#section-QR {
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.85);
+        display: none;
+        height: calc(100vh - 15px);
+        justify-content: center;
+        left: 0;
+        overflow: clip;
+        position: absolute;
+        top: -54px;
+        width: 100vw;
+        z-index: 2;
+
+        &.show {
+          display: flex;
+        }
+
+        > #container-QR {
+          background-color: white;
+          border-radius: 10px;
+          padding: 10px 15px;
+
+          > #container-QR-dummy {
+            aspect-ratio: 1 / 1;
+            width: 200px;
+          }
+
+          > #container-QR-info {
+            align-items: center;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 15px;
+            width: 225px;
+
+            > #button-downloadQrCode {
+              align-items: center;
+              background-color: lightgray;
+              border: 1px solid var(--signature-blue);
+              border-radius: 8px;
+              cursor: pointer;
+              display: flex;
+              flex-direction: row;
+              font-family: "Rubik";
+              gap: 5px;
+              padding: 3px 10px;
+              
+              > img {
+                aspect-ratio: 1 / 1;
+                width: 25px;
+              }
+            }
+          }
+        }
+      }
+      
+      > div {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        font-size: 1em;
+        justify-content: space-between;
+        margin-top: 3px;
+        padding: 5px 8px;
+        position: relative;
+
+        &.toggleable {
+          cursor: pointer;
+          
+          &::after {
+            aspect-ratio: 1 / 1;
+            background-image: url('../../../assets/buttonUntoggled.png');
+            background-size: cover;
+            content: "";
+            height: max-content;
+            justify-self: end;
+            width: 20px;
+          }
+
+          &:hover {
+            background-color: lightgray;
+          }
+
+          &.active::after {
+            background-image: url('../../../assets/buttonToggled.png');
+          }
+        }
+      }
+      
+      > p {
+        font-size: 0.8em;
+        margin: 3px 0;
+        padding: 0;
+      }
+
+      > select {
+        border: 1px solid var(--signature-blue);
+        border-radius: 10px;
+        cursor: pointer;
+        padding: 3px 5px;
+        
+        &:focus {
+          outline: none;
+        }
+      }
+      
+      > .topRight {
+        position: absolute;
+        right: 0;
+        top: 7px;
+      }
+    }
+  }
+}
