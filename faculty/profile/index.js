@@ -34,7 +34,7 @@ document.querySelector("#section-notifications-contactNumber").addEventListener(
 
 document.querySelector("#section-account-studentId").addEventListener(
   "click",
-  (_) => notify("", "Copied your Student ID to clipboard")
+  (_) => notify("", "Copied your Faculty ID to clipboard")
 )
 
 document.querySelector("#button-logOut").addEventListener(

@@ -1,1 +1,285 @@
 @import url('../../../base.css');
+
+
+#mainContent {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 50px;
+  
+  > #section-calendar {
+    aspect-ratio: 5 / 3;
+    background-color: white;
+    border-radius: 12px;
+    height: max-content;
+    padding: 20px;
+
+    > header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+
+      > button {
+        align-items: center;
+        aspect-ratio: 1 / 1;
+        background: #E3E3E3;
+        border: 1px solid #D3D3D3;
+        border-radius: 4px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        outline: none;
+        vertical-align: middle;
+      }
+
+      > #container-monthName {
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1.2em;
+        font-weight: bold;
+        padding: 3px 7px;
+        
+        &:hover {
+          background-color: lightgray;
+        }
+      }
+    }
+
+    > main {
+      > .calendar {
+        border-spacing: 10px;
+
+        th, td {
+          border-radius: 13px;
+          padding: 2px 7px;
+          text-align: end;
+          width: 35px;
+        }
+
+        th {
+          font-weight: 500;
+        }
+
+        td {
+          cursor: pointer;
+
+          &:hover {
+            background-color: #7AA2C4;
+          }
+
+          &.calendar-anotherMonthDate {
+            color: #5D5555;
+          }
+
+          &.calendar-holiday {
+            color: red;
+          }
+          
+          &.calendar-today {
+            background-color: var(--signature-blue);
+            color: white;
+
+            &.calendar-hasEvents {
+              &:before {
+                color: var(--signature-yellow);
+              }
+            }
+          }
+
+          &.calendar-hasEvents {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            position: relative;
+            
+            &:before {
+              color: var(--signature-blue);
+              border-radius: 5px;
+              content: "·";
+            }
+          }
+        }
+      }
+    }
+
+    > footer {
+      color: gray;
+      font-size: 0.7em;
+    }
+  }
+
+  > #section-creationPanel {
+    aspect-ratio: 4 / 2;
+    background-color: white;
+    border-radius: 13px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: calc(100% - 30px);
+    overflow-x: clip;
+    overflow-y: auto;
+    padding: 10px 15px;
+    position: relative;
+
+    > #button-back {
+      align-items: center;
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      flex-direction: row;
+      font-family: "Rubik";
+      gap: 10px;
+      width: 100px;
+
+      > img {
+        aspect-ratio: 1 / 1;
+        width: 15px;
+      }
+    }
+
+    > #event-name {
+      box-sizing: border-box;
+      
+      &::before {
+        color: var(--signature-blue);
+        content: "Event Name*";
+        display: flex;
+        font-size: 0.7em;
+        font-style: italic;
+        font-weight: 500;
+      }
+
+      > #input-eventName {
+        background: none;
+        border: 1px solid var(--signature-blue);
+        border-radius: 5px;
+        box-sizing: border-box;
+        font-family: "Rubik";
+        padding: 5px 10px;
+        width: 100%;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    > #event-venue {
+      box-sizing: border-box;
+
+      &::before {
+        color: var(--signature-blue);
+        content: "Event Venue*";
+        display: flex;
+        font-size: 0.7em;
+        font-style: italic;
+        font-weight: 500;
+      }
+
+      > #input-eventVenue {
+        background: none;
+        border: 1px solid var(--signature-blue);
+        border-radius: 5px;
+        box-sizing: border-box;
+        font-family: "Rubik";
+        padding: 5px 10px;
+        width: 100%;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    > #event-date {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      margin-top: 8px;
+
+      > #input-startDate, > #input-endDate {
+        border: none;
+        cursor: pointer;
+        font-family: "Rubik";
+        
+        &:focus {
+          outline: none;
+        }
+      }
+      
+      > #input-startDate::before {
+        color: var(--signature-blue);
+        content: "Start Date*";
+        display: flex;
+        flex-direction: row;
+        font-size: 1.1em;
+        font-weight: 500;
+        justify-self: center;
+      }
+
+      > #input-endDate::before {
+        color: var(--signature-blue);
+        content: "End Date*";
+        display: flex;
+        flex-direction: row;
+        font-size: 1.1em;
+        font-weight: 500;
+        justify-self: center;
+      }
+    }
+
+    > #event-participants {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+
+      > div {
+        box-sizing: border-box;
+        width: 48%;
+
+        &#container-programsSelect::before {
+          color: var(--signature-blue);
+          content: "Programs";
+          font-size: 0.8em;
+          font-style: italic;
+          font-weight: 500;
+        }
+
+        &#container-yearLevelsSelect::before {
+          color: var(--signature-blue);
+          content: "Year Levels";
+          font-size: 0.8em;
+          font-style: italic;
+          font-weight: 500;
+        }
+        
+        > select {
+          border: 1px solid var(--signature-blue);
+          border-radius: 5px;
+          box-sizing: border-box;
+          cursor: pointer;
+          font-family: "Rubik";
+          padding: 5px 10px;
+          width: 100%;
+        }
+      }
+    }
+    
+    > #button-createEvent {
+      background-color: var(--signature-blue);
+      border: none;
+      border-radius: 13px;
+      bottom: 15px;
+      color: white;
+      cursor: pointer;
+      font-family: "Rubik";
+      font-size: 0.9em;
+      padding: 5px 13px;
+      position: absolute;
+      right: 15px;
+    }
+  }
+}
