@@ -1,20 +1,6 @@
 import { notify } from '../../../base.js';
 
 
-export function register() {
-  const button = document.querySelector("#button-register");
-  button.disabled = true;
-  button.innerText = "Registered";
-  notify("", "Successfully registered for the event.");
-  document.querySelector("#section-notification").classList.add("show");
-  document.querySelector("#button-QR").classList.add("show");
-}
-
-export function displayQrCode() {
-  document.querySelector("#section-QR").classList.add("show");
-}
-
-
 document.querySelector("#section-notification-emailAddress").addEventListener(
   "click",
   (_) => {
@@ -44,16 +30,33 @@ document.querySelector("#reminderTime").addEventListener(
   (event) => notify("", `Updated delay of reminder to: ${event.target.value}`)
 )
 
-document.querySelector("#button-close-qrCode").addEventListener(
-  "click",
-  (_) => document.querySelector("#section-QR").classList.remove("show")
+document.querySelector("#button-cancelEvent").addEventListener(
+  "click", (_) => document.querySelector("#section-eventCancellation").classList.add("show")
 )
 
-document.querySelector("#button-downloadQrCode").addEventListener(
-  "click",
-  (_) => notify("", "Starting QR code download...")
+document.querySelector("#button-cancel").addEventListener(
+  "click", (_) => document.querySelector("#section-eventCancellation").classList.remove("show")
 )
 
-
-window.displayQrCode = displayQrCode;
-window.register = register;
+document.querySelector("#button-confirm").addEventListener(
+  "click", (_) => {
+    notify("Action confirmed", "Cancelling event...");
+    document.querySelector("#button-confirm").disabled = true;
+    document.querySelector("#button-cancel").disabled = true;
+    setTimeout(
+      () => {
+        document.querySelector("#section-eventCancellation").classList.remove("show");
+        notify("", "Event successfully cancelled");
+        document.querySelector(".container-event.selected").classList.remove("ongoing");
+        document.querySelector(".container-event.selected").classList.add("cancelled");
+        document.querySelector("#eventInfo-name").classList.remove("ongoing");
+        document.querySelector("#eventInfo-name").classList.add("cancelled");
+        document.querySelector("#button-editEvent").remove();
+        document.querySelector("#button-cancelEvent").remove();
+        document.querySelector("#button-scanQrAttendance").remove();
+        document.querySelector("#section-notification").remove();
+      },
+      2500
+    )
+  }
+)

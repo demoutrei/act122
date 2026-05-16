@@ -94,6 +94,10 @@ body {
         width: 30px;
       }
 
+      > #account-name {
+        font-weight: 500;
+      }
+
       > #account-id {
         font-size: 0.7em;
       }

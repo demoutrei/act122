@@ -129,6 +129,16 @@
         <div id="eventInfo-description">Sample event description</div>
         <div id="eventInfo-time" title="Schedule">May 6 2026 | 5:00 p.m - 8:00 p.m</div>
         <div id="eventInfo-venue" title="Venue">CCS Laboratory 3</div>
+        <section id="section-participants">
+          <header>
+            <div class="title">PARTICIPANTS</div>
+            <button id="button-scanQrAttendance" title="Scan QR attendance">
+              <img src="../../../assets/qrCode.png" alt="QR Attendance" title="QR Code"/>
+              Scan
+            </button>
+          </header>
+          <div id="container-participants-attendees" title="View attendees in Excel">53/129</div>
+        </section>
         <section id="section-notification">
           <p>How do you want to be notified?</p>
           <div id="section-notification-emailAddress" class="toggleable active">Email Address</div>
@@ -145,26 +155,17 @@
             <option value="24 hours">24 hours prior</option>
           </select>
         </section>
-        <button id="button-register" onclick="register();">Register</button>
-        <button id="button-QR" onclick="displayQrCode();">
-          <img src="../../../assets/qrCode.png" alt="QR Attendance" title="QR Code"/>
-          QR Code
-        </button>
-        <section id="section-QR">
-          <div id="container-QR">
-            <img id="container-QR-dummy" src="../../../assets/dummyQr.png"/>
-            <div id="container-QR-info">
-              <p>Take a screenshot or download this QR code. This will serve as verification for your attendance in the event.</p>
-              <button id="button-downloadQrCode">
-                <img src="../../../assets/download.png"/>
-                Download
-              </button>
-              <button id="button-close-qrCode" class="button-close">
-                <img src="../../../assets/close.png" alt="Close window"/>
-              </button>
-            </div>
+        <button id="button-editEvent" title="Edit event details">Edit</button>
+        <button id="button-cancelEvent" title="Cancel event">Cancel</button>
+      </section>
+      <section id="section-eventCancellation">
+        <div>
+          <p>Are you sure you want to cancel '<b id="eventName">Sample Event</b>' event?</p>
+          <div id="container-actions">
+            <button id="button-cancel">Cancel</button>
+            <button id="button-confirm">Confirm</button>
           </div>
-        </section>
+        </div>
       </section>
     </main>
     <div id="container-notifications"></div>
