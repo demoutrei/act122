@@ -60,3 +60,7 @@ document.querySelector("#button-confirm").addEventListener(
     )
   }
 )
+
+document.querySelector("#container-participants-attendees").addEventListener(
+  "click", (_) => window.open("https://docs.google.com/spreadsheets/d/1vxFPeRvICQ_iyRyZcryD0bmaJ7HzE0Cp_RrREmJ_IkE/edit?usp=sharing")
+)
